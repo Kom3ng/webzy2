@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "genapi": "openapi-generator-cli generate -i https://gp.astrack.me/zyapi/dist.json -g typescript-fetch -o ./src/gen/api"
