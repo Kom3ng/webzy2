@@ -5,6 +5,7 @@ import { App, ConfigProvider } from "antd";
 import ClientInitializer from "./components/ClientInitializer";
 import { SWRConfig } from "swr";
 import { ErrorBoundary } from "react-error-boundary";
+import Spinner from "./components/Spinner";
 
 function Application() {
   return (
@@ -21,7 +22,13 @@ function Application() {
         <ErrorBoundary fallback={<span>oops</span>}>
           <App>
             <ClientInitializer />
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense
+              fallback={
+                <div className="flex justify-center items-center h-screen">
+                  <Spinner size="large" />
+                </div>
+              }
+            >
               {useRoutes(routes)}
             </Suspense>
           </App>
