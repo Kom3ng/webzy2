@@ -26,7 +26,16 @@ export default function GlobalLayout({ children }: { children: ReactNode }) {
       label: "在線專欄",
       icon: <FontAwesomeIcon icon={faGlobe} />,
       key: "column",
-      onClick: () => window.open("http://zykj.org"),
+      onClick: () => {
+        if (!user) {
+          message.warning("請先登錄！");
+          return;
+        }
+
+        window.open(
+          `http://sxz.school.zykj.org/navPage.html?apiHost=http://sxz.api.zykj.org&apiToken=${user.accessToken}&timeStamp=${Date.now()}`,
+        );
+      },
     },
   ];
   return (
