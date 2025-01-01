@@ -83,6 +83,8 @@ export default function Page() {
           onChange={(p) => {
             navigate(`/mistake/${bookId}/?page=${p}`);
           }}
+          hideOnSinglePage
+          pageSize={20}
           className="flex justify-center mt-8"
           defaultCurrent={page}
           total={count}
