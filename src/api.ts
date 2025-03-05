@@ -1,7 +1,7 @@
 import { Configuration, FetchAPI, ManageApi, MistakeApi } from "./gen/api";
 
 const config = new Configuration({
-  basePath: "https://zyp.astrack.me/api",
+  basePath: "https://zyp.metasxz.org/api",
 });
 export const mistakeApi = new MistakeApi(config);
 export const manageApi = new ManageApi(config);
