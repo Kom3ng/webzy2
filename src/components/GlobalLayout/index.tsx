@@ -90,7 +90,67 @@ export default function GlobalLayout({ children }: { children: ReactNode }) {
         </div>
       </Header>
       <Content>{children}</Content>
-      <Footer></Footer>
+      <Footer
+        style={{
+          backgroundColor: colorBgContainer,
+        }}
+      >
+        <div className="mr-32 ml-32">
+          <div className="flex justify-between text-gray-600">
+            <div>
+              <div className="text-lg">相关</div>
+              <a
+                className="block"
+                href="https://bbs.metasxz.org/"
+                target="_blank"
+              >
+                MetaSxz 论坛
+              </a>
+              <a
+                className="block"
+                href="https://gh.okay.moe/zyapi/"
+                target="_blank"
+              >
+                中育API文档
+              </a>
+            </div>
+            <div>
+              <div className="text-lg">社交平台</div>
+              <a
+                className="block"
+                href="https://t.me/+Rt1T-VeKiFMwZjll"
+                target="_blank"
+              >
+                Telegram 群组
+              </a>
+            </div>
+            <div>
+              <div className="text-lg">其他</div>
+              <a
+                className="block"
+                href="https://github.com/kom3ng/webzy2/"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div className="flex justify-center m-8 gap-1">
+            <p>© {new Date().getFullYear()} Astrack. Some rights reserved.</p>
+            <p>
+              Licensed under the{" "}
+              <a
+                href="https://opensource.org/licenses/MIT"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                MIT License
+              </a>
+            </p>
+          </div>
+        </div>
+      </Footer>
     </Layout>
   );
 }
