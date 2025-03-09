@@ -19,7 +19,26 @@ function Application() {
           },
         }}
       >
-        <ErrorBoundary fallback={<span>oops</span>}>
+        <ErrorBoundary
+          fallback={
+            <div className="lg:m-48 md:m-32 m-16">
+              <div className="font-bold text-xl">
+                发生错误，请尝试刷新页面。
+              </div>
+              <div>
+                如果问题持续存在请在
+                <a
+                  className="text-blue-500"
+                  target="_blank"
+                  href="https://github.com/Kom3ng/webzy2/issues"
+                >
+                  Github
+                </a>
+                上寻求帮助
+              </div>
+            </div>
+          }
+        >
           <App>
             <ClientInitializer />
             <Suspense
