@@ -57,10 +57,10 @@ export default function LoginPage() {
           now.getTime() + auth.refreshExpireInSeconds! * 1000,
         ),
       });
-      message.success("登錄成功！");
+      message.success("登录成功！");
       navigate(searchParams.get("from") || "/");
     } catch (e) {
-      message.error("發生了錯誤<" + e);
+      message.error("发生了错误：" + e);
     } finally {
       setLoading(false);
     }
@@ -84,27 +84,27 @@ export default function LoginPage() {
           <Form name="login" autoComplete="off" onFinish={onFinish}>
             <Form.Item<FieldType>
               name="username"
-              rules={[{ required: true, message: "請輸入用戶名！" }]}
+              rules={[{ required: true, message: "请输入用户名！" }]}
             >
               <Input
                 prefix={<FontAwesomeIcon icon={faUser} />}
-                placeholder="用戶名"
+                placeholder="用户名"
               />
             </Form.Item>
 
             <Form.Item<FieldType>
               name="password"
-              rules={[{ required: true, message: "請輸入密碼！" }]}
+              rules={[{ required: true, message: "请输入密码！" }]}
             >
               <Input.Password
                 prefix={<FontAwesomeIcon icon={faLock} />}
-                placeholder="密碼"
+                placeholder="密码"
               />
             </Form.Item>
 
             <Form.Item label={null}>
               <Button type="primary" htmlType="submit">
-                登錄
+                登录
               </Button>
             </Form.Item>
           </Form>

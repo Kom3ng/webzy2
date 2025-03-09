@@ -40,12 +40,20 @@ export default function MistakeBooks() {
     );
   if (error) {
     message.error(error);
-    return <>發生了錯誤，請刷新重試</>;
+    return (
+      <div className="font-bold text-lg lg:m-48 md:m-32 m-16">
+        发生了错误，请刷新重试
+      </div>
+    );
   }
 
   if (!data?.success) {
     message.error(data?.error?.message);
-    return <>發生了錯誤，請刷新重試</>;
+    return (
+      <div className="font-bold text-lg lg:m-48 md:m-32 m-16">
+        发生了错误，请刷新重试
+      </div>
+    );
   }
 
   return (

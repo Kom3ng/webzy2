@@ -31,10 +31,19 @@ export default function Page() {
   );
 
   if (isLoading) return <Spinner className="flex justify-center m-8" />;
-  if (error) return <>發生了錯誤，請刷新重試</>;
+  if (error)
+    return (
+      <div className="font-bold text-lg lg:m-48 md:m-32 m-16">
+        发生了错误，请刷新重试
+      </div>
+    );
   if (!data.success) {
     message.error(data.error?.message);
-    return <>發生了錯誤，請刷新重試</>;
+    return (
+      <div className="font-bold text-lg lg:m-48 md:m-32 m-16">
+        发生了错误，请刷新重试
+      </div>
+    );
   }
 
   return (

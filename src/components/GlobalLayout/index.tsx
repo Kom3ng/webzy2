@@ -17,18 +17,18 @@ export default function GlobalLayout({ children }: { children: ReactNode }) {
   } = theme.useToken();
   const menuItems: Required<MenuProps>["items"][number][] = [
     {
-      label: "錯提本",
+      label: "错提本",
       icon: <FontAwesomeIcon icon={faBook} />,
       key: "book",
       onClick: () => navigate("/mistake"),
     },
     {
-      label: "在線專欄",
+      label: "在线专栏",
       icon: <FontAwesomeIcon icon={faGlobe} />,
       key: "column",
       onClick: () => {
         if (!user) {
-          message.warning("請先登錄！");
+          message.warning("请先登录！");
           return;
         }
 
