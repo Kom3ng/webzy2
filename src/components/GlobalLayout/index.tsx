@@ -95,19 +95,19 @@ export default function GlobalLayout({ children }: { children: ReactNode }) {
           backgroundColor: colorBgContainer,
         }}
       >
-        <div className="mr-32 ml-32">
+        <div className="lg:mr-32 lg:ml-32 md:mr-24 md:ml-24">
           <div className="flex justify-between text-gray-600">
             <div>
-              <div className="text-lg">相关</div>
+              <div className="text-gray-800">相关</div>
               <a
-                className="block"
+                className="block text-sm"
                 href="https://bbs.metasxz.org/"
                 target="_blank"
               >
                 MetaSxz 论坛
               </a>
               <a
-                className="block"
+                className="block text-sm"
                 href="https://gh.okay.moe/zyapi/"
                 target="_blank"
               >
@@ -115,9 +115,9 @@ export default function GlobalLayout({ children }: { children: ReactNode }) {
               </a>
             </div>
             <div>
-              <div className="text-lg">社交平台</div>
+              <div className="text-gray-800">社交平台</div>
               <a
-                className="block"
+                className="block text-sm"
                 href="https://t.me/+Rt1T-VeKiFMwZjll"
                 target="_blank"
               >
@@ -125,9 +125,9 @@ export default function GlobalLayout({ children }: { children: ReactNode }) {
               </a>
             </div>
             <div>
-              <div className="text-lg">其他</div>
+              <div className="text-gray-800">其他</div>
               <a
-                className="block"
+                className="block text-sm"
                 href="https://github.com/kom3ng/webzy2/"
                 target="_blank"
               >
@@ -136,7 +136,7 @@ export default function GlobalLayout({ children }: { children: ReactNode }) {
             </div>
           </div>
 
-          <div className="flex justify-center m-8 gap-1">
+          <div className="flex justify-center mt-8 gap-1 text-xs">
             <p>© {new Date().getFullYear()} Astrack. Some rights reserved.</p>
             <p>
               Licensed under the{" "}
