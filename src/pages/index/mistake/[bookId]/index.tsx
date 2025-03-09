@@ -48,12 +48,11 @@ export default function Page() {
   const count = data.result?.totalCount || 0;
   return (
     <div className="m-8">
-      <Card bordered={false}>
-        <List
-          bordered
-          dataSource={items}
-          renderItem={(item) => {
-            return (
+      <List
+        dataSource={items}
+        renderItem={(item) => {
+          return (
+            <Card className="m-4">
               <List.Item
                 onClick={() =>
                   navigate(
@@ -73,23 +72,26 @@ export default function Page() {
                   />
                 }
               >
-                <List.Item.Meta title={item.name} description={item.source} />
+                <List.Item.Meta
+                  title={item.name ? item.name : item.source}
+                  description={item.name ? item.source : ""}
+                />
               </List.Item>
-            );
-          }}
-        ></List>
+            </Card>
+          );
+        }}
+      ></List>
 
-        <Pagination
-          onChange={(p) => {
-            navigate(`/mistake/${bookId}/?page=${p}`);
-          }}
-          hideOnSinglePage
-          pageSize={20}
-          className="flex justify-center mt-8"
-          defaultCurrent={page}
-          total={count}
-        />
-      </Card>
+      <Pagination
+        onChange={(p) => {
+          navigate(`/mistake/${bookId}/?page=${p}`);
+        }}
+        hideOnSinglePage
+        pageSize={20}
+        className="flex justify-center mt-8"
+        defaultCurrent={page}
+        total={count}
+      />
     </div>
   );
 }
